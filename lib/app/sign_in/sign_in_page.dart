@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:time_tracker_flutter_course/app/sign_in/sign_in_button.dart';
+import 'package:time_tracker_flutter_course/app/sign_in/social_sign_in_button.dart';
+import 'package:time_tracker_flutter_course/common_widgets/custom_raised_button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -10,6 +13,7 @@ class SignInPage extends StatelessWidget {
         elevation: 3.0,
       ),
       body: _buildContent(),
+      backgroundColor: Colors.grey[200],
     );
   }
 
@@ -28,16 +32,42 @@ class SignInPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 8.0),
-          RaisedButton(
-            child: Text(
-              'Sign In With Google',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 15.0,
-              ),
-            ),
+          SizedBox(height: 48.0),
+          SocialSignInButton(
+            assetName: 'images/google-logo.png',
+            text: 'Sing In With Google',
+            textColor: Colors.black87,
             color: Colors.white,
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          SocialSignInButton(
+            assetName: 'images/facebook-logo.png',
+            text: 'Sing In With Facebook',
+            textColor: Colors.white,
+            color: Color(0xFF334D92),
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          SocialSignInButton(
+            assetName: 'images/mail.png',
+            text: 'Sing In With Email',
+            textColor: Colors.white,
+            color: Colors.teal[700],
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            'or',
+            style: TextStyle(fontSize: 14.0, color: Colors.black87),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 8.0),
+          SocialSignInButton(
+            assetName: 'images/ano.png',
+            text: 'Go Anonymous',
+            textColor: Colors.black,
+            color: Colors.lime[300],
             onPressed: () {},
           ),
         ],
